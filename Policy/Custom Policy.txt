@@ -49,7 +49,7 @@
                 "field": "Microsoft.Compute/virtualMachines/applicationProfile.galleryApplications[*]",
                 "where": {
                   "field": "Microsoft.Compute/virtualMachines/applicationProfile.galleryApplications[*].packageReferenceId",
-                  "equals": "/subscriptions/7d84e459-664d-4e40-8b69-70001ccac7a3/resourceGroups/Quick-POC/providers/Microsoft.Compute/galleries/vmgalleries/applications/Chrome/versions/1.0.0"
+                  "equals": "/subscriptions/XXXXX-XXXX-XXXX-XXXX-70001XXXX7a3/resourceGroups/Quick-POC/providers/Microsoft.Compute/galleries/vmgalleries/applications/Chrome/versions/1.0.0"
                 }
               },
               "greater": 0
@@ -76,7 +76,7 @@
                   "name": "[concat(parameters('vmName'), '/Chrome')]",
                   "location": "[parameters('location')]",
                   "properties": {
-                    "packageReferenceId": "/subscriptions/7d84e459-664d-4e40-8b69-70001ccac7a3/resourceGroups/Quick-POC/providers/Microsoft.Compute/galleries/vmgalleries/applications/Chrome/versions/1.0.0"
+                    "packageReferenceId": "/subscriptions/XXXXX-XXXX-XXXX-XXXX-70001XXXX7a3/resourceGroups/Quick-POC/providers/Microsoft.Compute/galleries/vmgalleries/applications/Chrome/versions/1.0.0"
                   }
                 }
               ]
@@ -90,4 +90,5 @@
       }
     }
   }
+
 }
