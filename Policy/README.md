@@ -1,1 +1,34 @@
+Understanding the policy details
+```
+"if": {
+      "allOf": [
+        {
+          "field": "type",
+          "equals": "Microsoft.Compute/virtualMachines"
+        },
+        {
+          "anyOf": [
+            {
+              "field": "Microsoft.Compute/virtualMachines/osProfile.windowsConfiguration",
+              "exists": true
+            },
+            {
+              "field": "Microsoft.Compute/virtualMachines/storageProfile.osDisk.osType",
+              "like": "Windows*"
+            },
+            {
+              "field": "Microsoft.Compute/imagePublisher",
+              "in": [
+                "MicrosoftVisualStudio",
+                "MicrosoftWindowsDesktop",
+                "MicrosoftWindowsServer"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+```
+
+In this section of the policy I am running the policy on all windows machine. Depending on your specific scenario you may have other prerequisit for your own application that you can add to the "if" segment and filter down the machines to only those where you wish to install your application. 
 
