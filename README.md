@@ -79,6 +79,7 @@ So far so good – Application installation during VM deployment worked. What if
 
 This can be achieved using a DeployIfNotExist Azure policy. Let’s try it in the subsequent section.
 For the PoC I am going to assign a policy at the Resource Group level to enforce a particular application (Chrome) with specific version deployed to each VM and scale set. The reference to the custom policy source code is available for reference and reuse. 
+
 12)	Create a policy under Policy -> Authoring -> Definition. Add definition location, Name, and add a custom policy.
 
 <img width="600" height="470" alt="Picture14" src="https://github.com/user-attachments/assets/7eb893cb-aa79-4326-8102-95b8be3104a6" />
@@ -96,7 +97,7 @@ For the PoC I am going to assign a policy at the Resource Group level to enforce
 
 <img width="900" height="450" alt="Picture13" src="https://github.com/user-attachments/assets/ad8bbb01-c908-4ca3-8256-71a5701ff6d6" />
 
-That concludes the Step by Step guide on how to set up a custom policy to enforce Application installation across VMs and Scaleset. The policy used is in the the source code for reference. 
+That concludes the Step by Step guide on how to set up a custom policy to enforce Application installation across VMs and Scaleset. The detailed breakdown of the policy is available here.
 
 
 
