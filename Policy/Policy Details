@@ -1,6 +1,6 @@
 Understanding the policy details
 
-```JSON
+```
 "if": {
       "allOf": [
         {
