@@ -75,9 +75,10 @@ Testing
 
 Automation
 
-So far so good – Application installation during VM deployment worked. What if you have a scenario where you want to make sure any VM or scale set that will be deployed in your subscription/resource group should have a particular application/s installed. TL;DR – enforce all deployments of a particular application of a most recent version
+So far so good – Application installation during VM deployment worked. What if you have a scenario where you want to make sure any VM or scale set that will be deployed in your subscription/resource group should have a particular application/s installed. TL;DR – enforce a particular application are of the most recent version on each VM or scaleset provisioned.
+
 This can be achieved using a DeployIfNotExist Azure policy. Let’s try it in the subsequent section.
-For the PoC I am going to assign a policy at the Resource Group level to enforce a particular application (Chrome) with specific version deployed to each VM and scale set.
+For the PoC I am going to assign a policy at the Resource Group level to enforce a particular application (Chrome) with specific version deployed to each VM and scale set. The reference to the custom policy source code is available for reference and reuse. 
 12)	Create a policy under Policy -> Authoring -> Definition. Add definition location, Name, and add a custom policy.
 
 <img width="600" height="470" alt="Picture14" src="https://github.com/user-attachments/assets/7eb893cb-aa79-4326-8102-95b8be3104a6" />
