@@ -8,7 +8,7 @@ This is great for managing application deployment on image but how to enforce al
       2) Apply VM Application during VM deployment
       3) Automate VM application deployment using Azure Custom Policy
 
-**Create Compute gallery and VM Application**
+**Creating VM Application in Compute Gallery**
 
 1) Create Storage Account if you don’t have one and create a container or multiple containers for applications as needed. You can create one application for all application or create separate container for each application.
 
@@ -24,7 +24,7 @@ This is great for managing application deployment on image but how to enforce al
  
 4) In the galleries home you will see two options
    
-      a.	Create a VM image definition
+      a.	Create a VM image definition\
       b.	Create a VM application definition
    
 I will create VM application definition in this case and upload the application from the storage container. From ```Overview -> Add dropdown -> VM application definition```
@@ -56,7 +56,7 @@ Post deployment the VM Application should be shown below with a version and publ
 
 <img width="700" height="450" alt="Picture8" src="https://github.com/user-attachments/assets/f0d20dd7-d96d-4a02-a7e1-965ae86ea392" />
 
-**Testing**
+**Apply VM Application during VM deployment**
 
 7) Once the deployment is complete to test this out you can deploy a VM and see if the VM Application from the compute gallery is deployed successfully. To test this I am going to deploy a VM (Windows) in the same region as the replica. Follow along the prompts to select the default options for PoC all the way to ```Advanced``` tab
    
@@ -79,7 +79,7 @@ Post deployment the VM Application should be shown below with a version and publ
 <img width="900" height="450" alt="Picture13" src="https://github.com/user-attachments/assets/7ae207bf-421b-4fca-b086-b838ceb87a5f" />
 
 
-**Automation**
+**Automate VM application deployment using Azure Custom Policy**
 
 So far so good – Application installation during VM deployment worked. What if you have a scenario where you want to make sure any VM or scale set that will be deployed in your subscription/resource group should have a particular application/s installed. TL;DR – enforce a particular application are of the most recent version on each VM or scaleset provisioned.
 
