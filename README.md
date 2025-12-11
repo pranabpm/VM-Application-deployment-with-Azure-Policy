@@ -1,4 +1,4 @@
-# VM-Application-deployment-with-Azure-Policy
+# VM Application deployment with Azure Policy
 
 Mission critical workloads often need to deploy hardened images to secure their application by pre-installing applications. This works most of the cases but increase over head of managing and maintaining the latest upgraded applications and reimaging. Azure VM Application a resource type under Azure compute Gallery that provides the flexibility to manage and deploy application across virtual machines and scalesets. It decouples application installation from VM Base image so you can streamline updates, reduce image maintanance overheadto accelerate deploiyment cycle. This functionality is best suited for deploying high scale, low latency, AI, micro-services, security and complient workloads.
 
