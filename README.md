@@ -22,23 +22,29 @@ This is great for managing application deployment on image but how to enforce al
  
  <img width="600" height="450" alt="Picture3" src="https://github.com/user-attachments/assets/c39b77cc-9a83-4e16-a7c3-df21e971e7cd" />
  
-4) In the galleries home you will see two options 
+4) In the galleries home you will see two options
+   
       a.	Create a VM image definition
       b.	Create a VM application definition
-We will create VM application definition in this case and upload the application from the storage container. From Overview -> Add dropdown  VM application definition
-Complete the basic information and navigate to Publishing options
+   
+I will create VM application definition in this case and upload the application from the storage container. From ```Overview -> Add dropdown -> VM application definition```
+
+<img width="900" height="490" alt="picture 17" src="https://github.com/user-attachments/assets/97331303-c46b-4060-b854-3aae6b0b1705" />
+
+Complete the basic information and navigate to ```Publishing options```
 
 <img width="600" height="450" alt="Picture4" src="https://github.com/user-attachments/assets/27f4daf9-54bc-48ae-9b39-a88e6b4d8738" />
 
-5) Publishing definitions are optional field and can be filled as needed. For the PoC I am only adding a description. You may add tags as needed then Review + Create
+5) Publishing definitions are optional field and can be filled as needed. For the PoC I am only adding a description. You may add tags as needed then ```Review + Create```
 
    <img width="800" height="450" alt="Picture5" src="https://github.com/user-attachments/assets/e1149b03-0a99-4db1-87f1-194c828a8060" />
 
-7) Next, we will add an application version. The version will have the actual installable file. Note: An application definition can have multiple versions.
+7) Next, we will add an application version. The version will have the actual installable file.
+   **Note:** An application definition can have multiple versions.
 
-From galleries overview screen select the definition we just created then navigate to Add to fill in the details and browse the source application package we upload in the storage account. Add mandatory install and uninstall script and any additional optional field you like to add then hit Replication. 
+From galleries overview screen select the definition we just created then navigate to ```Add``` to fill in the details and browse the source application package we upload in the storage account. Add mandatory install and uninstall script and any additional optional field you like to add then hit ```Replication```. 
 
-Note: Replication allows you to deploy this application to servers in different regions. You can add tag if you like then hit Review + create.
+**Note:** Replication allows you to deploy this application to servers in different regions. You can add tag if you like then hit ```Review + create```.
   
   <img width="700" height="450" alt="Picture6" src="https://github.com/user-attachments/assets/1b6bb2b1-235b-4a6c-aa40-79ac4b4ee4ec" />
 
@@ -52,11 +58,11 @@ Post deployment the VM Application should be shown below with a version and publ
 
 **Testing**
 
-7) Once the deployment is complete to test this out you can deploy a VM and see if the VM Application from the compute gallery is deployed successfully. To test this I am going to deploy a VM (Windows) in the same region as the replica. Follow along the prompts to select the default options for PoC all the way to Advanced tab
+7) Once the deployment is complete to test this out you can deploy a VM and see if the VM Application from the compute gallery is deployed successfully. To test this I am going to deploy a VM (Windows) in the same region as the replica. Follow along the prompts to select the default options for PoC all the way to ```Advanced``` tab
    
 <img width="900" height="450" alt="Picture9" src="https://github.com/user-attachments/assets/c2715ab1-cbbd-40d6-99e9-9af5d348b729" />
 
-9) Select the application available to install in the region. Also notice that we have different versions we can select from. Select the application and click save.
+9) Select the application available to install in the region. Also notice that we have different versions we can select from. Select the application and click ```save```.
     
    <img width="700" height="450" alt="Picture10" src="https://github.com/user-attachments/assets/2dfd6a3d-87f3-4af8-8024-56175898ef91" />
 
@@ -64,7 +70,7 @@ Post deployment the VM Application should be shown below with a version and publ
     
    <img width="900" height="450" alt="Picture11" src="https://github.com/user-attachments/assets/fddd4768-27cf-4129-99a0-71b212d6b103" />
 
-13) Once the validation passes click Create
+13) Once the validation passes click ```Create```.
     
     <img width="700" height="450" alt="Picture12" src="https://github.com/user-attachments/assets/de48eeaf-ba28-413f-bfd7-319a95a28949" />
 
@@ -80,12 +86,11 @@ So far so good – Application installation during VM deployment worked. What if
 This can be achieved using a DeployIfNotExist Azure policy. Let’s try it in the subsequent section.
 For the PoC I am going to assign a policy at the Resource Group level to enforce a particular application (Chrome) with specific version deployed to each VM and scale set. The reference to the custom policy source code is available for reference and reuse. 
 
-12)	Create a policy under Policy -> Authoring -> Definition. Add definition location, Name, and add a custom policy.
+12) Create a policy under ```Policy -> Authoring -> Definition```. Add definition location, Name, and add a custom policy.
 
 <img width="600" height="470" alt="Picture14" src="https://github.com/user-attachments/assets/7eb893cb-aa79-4326-8102-95b8be3104a6" />
 
-
-13) Assign policy: Once the definition is successfully created assign to the scope you want this to apply. For the PoC I am assigning it to the resource group.
+13) Once the definition is successfully created assign to the scope you want this to apply. For the PoC I am assigning it to the resource group.
 
 <img width="600" height="470" alt="Picture16" src="https://github.com/user-attachments/assets/022f2708-4717-4413-bfd8-781e26e42a80" />
 
