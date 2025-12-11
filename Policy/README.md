@@ -1,4 +1,4 @@
-Understanding the policy details
+Let's dive in to the policy details
 ```
 "if": {
       "allOf": [
@@ -53,7 +53,7 @@ In this section of the policy I am running the policy on all windows machine. De
           ]
         },
 ```
-This section refers to the policy "deployIfNotExists" thats primary goal is to deploy an application if the state of VM doesn't match the goal. We are specifying the service type "virtualMachine" that we want to evaluate. For each virtual machine, we are evaluating the statement and when each statement under "allOf" element must be true. To evaluate it, we examine the galleryApplications array under the applicationProfile property on the VM. For each array element the field we evaluate is packageReferenceId. Here is a quick way to resource ID via PowerShell.
+This section refers to the policy "deployIfNotExists" that's primary goal is to deploy an application if the state of VM doesn't match the goal. I am specifying the service type "virtualMachine" that we want to evaluate. For each virtual machine, we are evaluating the statement and when each statement under "allOf" element must be true. To evaluate it, we examine the galleryApplications array under the applicationProfile property on the VM. For each array element the field we evaluate is packageReferenceId. Here is a quick way to get resource ID via PowerShell.
 
 ```
 Get-AzGalleryApplicationVersion -GalleryName "vmgalleries" -ResourceGroupName "Quick-POC" -GalleryApplicationName "Chrome" | select-object Id
