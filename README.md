@@ -97,7 +97,7 @@ For the PoC I am going to assign a policy at the Resource Group level to enforce
 
 <img width="900" height="450" alt="Picture13" src="https://github.com/user-attachments/assets/ad8bbb01-c908-4ca3-8256-71a5701ff6d6" />
 
-That concludes the Step by Step guide on how to set up a custom policy to enforce application installation across VMs and Scaleset. Custom policy that I used and additional details of the custom policy can be found under the source code directory.
+That concludes the Step by Step guide on how to set up a custom policy to enforce application installation across VMs and Scaleset. Custom policy that I used and additional details of the custom policy can be found under the [Policy](https://github.com/pranabpm/VM-Application-deployment-with-Azure-Policy/tree/main/Policy) directory.
 
 
 
