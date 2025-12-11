@@ -93,6 +93,6 @@ You can pick and select the most approprete roleDefinition you need. The roleDef
                   }
                 ]
 ```
-In this case, we’re saying to add a new VMApplication with a packageReferenceId equal to that desired above. So, what this policy really does is – if the application isn’t installed on the VM – then put it there.
+In this case, we’re saying to add a new VMApplication with a packageReferenceId equal to that desired above. So, what this policy really does is if the application isn’t installed on the VM then install it there.
 
 
