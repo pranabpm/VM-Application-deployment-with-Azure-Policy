@@ -1,0 +1,93 @@
+{
+  "displayName": "Ensure Chrome",
+  "description": "Deploy Chrome VM application via Azure Compute Gallery when missing on Windows VMs.",
+  "policyType": "Custom",
+  "mode": "All",
+  "metadata": {
+    "category": "Compute",
+    "version": "1.0.0"
+  },
+  "parameters": {},
+  "policyRule": {
+    "if": {
+      "allOf": [
+        {
+          "field": "type",
+          "equals": "Microsoft.Compute/virtualMachines"
+        },
+        {
+          "anyOf": [
+            {
+              "field": "Microsoft.Compute/virtualMachines/osProfile.windowsConfiguration",
+              "exists": true
+            },
+            {
+              "field": "Microsoft.Compute/virtualMachines/storageProfile.osDisk.osType",
+              "like": "Windows*"
+            },
+            {
+              "field": "Microsoft.Compute/imagePublisher",
+              "in": [
+                "MicrosoftVisualStudio",
+                "MicrosoftWindowsDesktop",
+                "MicrosoftWindowsServer"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "then": {
+      "effect": "deployIfNotExists",
+      "details": {
+        "type": "Microsoft.Compute/virtualMachines",
+        "name": "[field('name')]",
+        "existenceCondition": {
+          "allOf": [
+            {
+              "count": {
+                "field": "Microsoft.Compute/virtualMachines/applicationProfile.galleryApplications[*]",
+                "where": {
+                  "field": "Microsoft.Compute/virtualMachines/applicationProfile.galleryApplications[*].packageReferenceId",
+                  "equals": "/subscriptions/XXXXX-XXXX-XXXX-XXXX-70001XXXX7a3/resourceGroups/Quick-POC/providers/Microsoft.Compute/galleries/vmgalleries/applications/Chrome/versions/1.0.0"
+                }
+              },
+              "greater": 0
+            }
+          ]
+        },
+        "roleDefinitionIds": [
+          "/providers/Microsoft.Authorization/roleDefinitions/8e3af657-a8ff-443c-a75c-2fe8c4bcb635"
+        ],
+        "deployment": {
+          "properties": {
+            "mode": "Incremental",
+            "template": {
+              "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json",
+              "contentVersion": "1.0.0.0",
+              "parameters": {
+                "vmName": { "type": "string" },
+                "location": { "type": "string" }
+              },
+              "resources": [
+                {
+                  "apiVersion": "2021-07-01",
+                  "type": "Microsoft.Compute/virtualMachines/VMapplications",
+                  "name": "[concat(parameters('vmName'), '/Chrome')]",
+                  "location": "[parameters('location')]",
+                  "properties": {
+                    "packageReferenceId": "/subscriptions/XXXXX-XXXX-XXXX-XXXX-70001XXXX7a3/resourceGroups/Quick-POC/providers/Microsoft.Compute/galleries/vmgalleries/applications/Chrome/versions/1.0.0"
+                  }
+                }
+              ]
+            },
+            "parameters": {
+              "vmName": { "value": "[field('name')]" },
+              "location": { "value": "[field('location')]" }
+            }
+          }
+        }
+      }
+    }
+  }
+}
