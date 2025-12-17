@@ -1,4 +1,4 @@
-Let's dive in to the policy details
+Let's dive in to the policy details.
 ```
 "if": {
       "allOf": [
@@ -71,7 +71,7 @@ from the output you will use the resourceId of the VM Application you want to en
 ```
 "equals": "/subscriptions/XXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXX/resourceGroups/Quick-POC/providers/Microsoft.Compute/galleries/vmgalleries/applications/Chrome/versions/1.0.0"
 ```
-Next is the role definition
+Next is the role definition.
 
 ```
 "roleDefinitionIds": [
