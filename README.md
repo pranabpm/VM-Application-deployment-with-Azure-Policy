@@ -4,9 +4,9 @@ Mission critical workloads often need to deploy hardened images to secure their 
 
 This is great for managing application deployment on image but how to enforce all virtual machines or scalesets have a particular application installed or ensure all deployments in a subscription or respurce group have deployment of a particular application/s are of the most recent version. This can be achieved in conjunction of using Azure policy to enforce application deployment during VM deployment. In this post I will walk thrugh step by step process creating Comoute Gallery and Build a custom policy to enforce automated application installation during VM Provisioning. On a high level this PoC will cover:
       
-      1) Creating VM Application in Compute Gallery
-      2) Apply VM Application during VM deployment
-      3) Automate VM application deployment using Azure Custom Policy
+      1) Creating VM Application in Compute Gallery.
+      2) Apply VM Application during VM deployment.
+      3) Automate VM application deployment using Azure Custom Policy.
 
 **Creating VM Application in Compute Gallery**
 
@@ -22,7 +22,7 @@ This is great for managing application deployment on image but how to enforce al
  
  <img width="600" height="450" alt="Picture3" src="https://github.com/user-attachments/assets/c39b77cc-9a83-4e16-a7c3-df21e971e7cd" />
  
-4) In the galleries home you will see two options
+4) In the galleries home you will see two options:
    
       a.	Create a VM image definition\
       b.	Create a VM application definition
@@ -48,17 +48,17 @@ From galleries overview screen select the definition we just created then naviga
   
   <img width="700" height="450" alt="Picture6" src="https://github.com/user-attachments/assets/1b6bb2b1-235b-4a6c-aa40-79ac4b4ee4ec" />
 
-For this PoC I am going to use a single region
+For this PoC I am going to use a single region.
 
 <img width="900" height="450" alt="Picture7" src="https://github.com/user-attachments/assets/35d9725c-1671-46b1-8111-40975dd465d9" />
 
-Post deployment the VM Application should be shown below with a version and published date
+Post deployment the VM Application should be shown below with a version and published date.
 
 <img width="700" height="450" alt="Picture8" src="https://github.com/user-attachments/assets/f0d20dd7-d96d-4a02-a7e1-965ae86ea392" />
 
 **Apply VM Application during VM deployment**
 
-7) Once the deployment is complete to test this out you can deploy a VM and see if the VM Application from the compute gallery is deployed successfully. To test this I am going to deploy a VM (Windows) in the same region as the replica. Follow along the prompts to select the default options for PoC all the way to ```Advanced``` tab
+7) Once the deployment is complete to test this out you can deploy a VM and see if the VM Application from the compute gallery is deployed successfully. To test this I am going to deploy a VM (Windows) in the same region as the replica. Follow along the prompts to select the default options for PoC all the way to ```Advanced``` tab.
    
 <img width="900" height="450" alt="Picture9" src="https://github.com/user-attachments/assets/c2715ab1-cbbd-40d6-99e9-9af5d348b729" />
 
