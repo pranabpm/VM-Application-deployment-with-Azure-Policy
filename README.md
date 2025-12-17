@@ -22,10 +22,10 @@ This is great for managing application deployment on image but how to enforce al
  
  <img width="600" height="450" alt="Picture3" src="https://github.com/user-attachments/assets/c39b77cc-9a83-4e16-a7c3-df21e971e7cd" />
  
-4) In the galleries home under ```+add``` you will see two options:
+4) In the galleries ```Overview``` under ```+Add``` you will see two options:
    
-      a.	VM image definition\
-      b.	VM application definition
+      a.	```VM image definition```\
+      b.	```VM application definition```
    
 I will create VM application definition in this case and upload the application from the storage container. From ```Overview -> Add dropdown -> VM application definition```
 
